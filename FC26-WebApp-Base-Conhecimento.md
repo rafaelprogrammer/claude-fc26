@@ -185,3 +185,24 @@ Acessado via Chrome MCP. Conta logada: **"LORDED"**. Seletor de jogo no topo dev
 4. Antes de qualquer ação **irreversível que consome jogadores** (submeter SBC, quick sell, descartar), **confirmar** com o Rafael.
 5. Comprar jogadores no mercado (gasta coins) → confirmar antes.
 6. Ler listas com `get_page_text` para economizar tokens.
+
+---
+
+## 8. SOFT BAN — cuidado crítico ao operar pelo navegador
+
+**O que é:** punição temporária da EA quando detecta muitas ações em curto período. Afeta principalmente o Mercado de Transferências (fica "locked"), mas também pode bloquear abrir packs / resolver SBCs / atualizar coins. A EA NÃO divulga os limites exatos. Automação e cliques rápidos são gatilhos clássicos → como o Claude opera via Chrome MCP, o risco é real.
+
+**Sintomas:** "Transfer Market locked", erro ao listar/comprar, "credits cannot be updated", mercado não carrega, ações que não respondem. Dura de minutos a horas.
+
+**Limites visíveis na própria web app:**
+- SBC: **Hourly Limit (90/h)** e **Daily Limit (300/dia)** — respeitar; não submeter SBCs em massa.
+
+**Regras de ritmo do Claude (anti-softban):**
+1. **Pausar entre ações** — usar `wait` (~2-4s) entre cliques/transações; nunca disparar rajadas.
+2. **Não encadear muitas ações** seguidas (listar/comprar/abrir pack/submeter SBC) sem intervalo.
+3. **Abrir packs com calma**, um de cada vez, com pausa — não abrir dezenas em sequência.
+4. **No mercado**, espaçar buscas/lances/compras; evitar muitas páginas rápidas.
+5. Se surgir qualquer sinal de bloqueio, **PARAR imediatamente** e avisar o Rafael; não insistir (insistir estende o ban).
+6. Preferir poucas ações planejadas em vez de muitas pequenas e rápidas.
+
+> Pendência: o SBC "84+ TOTW Upgrade" foi ocultado por engano (botão "ocultar"); reverter na aba **Hidden** do menu SBC ao retomar — com calma.
