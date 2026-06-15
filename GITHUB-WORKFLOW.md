@@ -1,6 +1,6 @@
 # Fluxo Git / GitHub — Projeto claude-fc26
 
-> Guia para Claude versionar este projeto. Carregar junto com a base de conhecimento.
+> Guia para versionar este projeto. Carregar junto com a base de conhecimento.
 
 ## Repositório
 - **Remoto:** `https://github.com/rafaelprogrammer/claude-fc26.git`
@@ -31,7 +31,7 @@ Avisos do tipo `unable to unlink ... Operation not permitted` são **inofensivos
 
 O push **não funciona pelo sandbox**:
 - SSH bloqueado (sem resolução de DNS para github.com).
-- HTTPS exige token/credencial, que o Claude não pode inserir (regra de segurança).
+- HTTPS exige token/credencial, que não é inserido por aqui (regra de segurança).
 
 Como o commit já fica gravado no `.git` da pasta local, **o push é feito pelo Rafael** no
 terminal do Mac (onde o Keychain/credenciais do GitHub já estão configurados):
@@ -43,10 +43,10 @@ git push                      # depois
 ```
 
 > Se preferir automatizar: configurar um credential helper ou usar a CLI `gh auth login`
-> uma vez no Mac; depois o push fica sem fricção. Claude continua sem inserir o token.
+> uma vez no Mac; depois o push fica sem fricção. O token continua não sendo inserido por aqui.
 
 ## Rotina sugerida
-1. Claude atualiza/cria arquivos do projeto (base de conhecimento, soluções de SBC, anotações).
-2. Claude faz `git add -A` + `git commit` (passo acima).
-3. Claude avisa o Rafael que há commit(s) pendentes de push.
+1. Atualizar/criar arquivos do projeto (base de conhecimento, soluções de SBC, anotações).
+2. Fazer `git add -A` + `git commit` (passo acima).
+3. Avisar o Rafael que há commit(s) pendentes de push.
 4. Rafael roda `git push` no Mac.

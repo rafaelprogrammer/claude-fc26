@@ -1,6 +1,6 @@
 # FC 26 Ultimate Team — Web App: Base de Conhecimento
 
-> Referência para Claude atuar como especialista no clube **SELVA** do Rafael.
+> Referência de operação do clube **SELVA** do Rafael.
 > Última atualização do mapeamento: **15/06/2026** (Season 8 — Festival of Football).
 > Objetivo: carregar este arquivo em vez de re-navegar a web app a cada sessão.
 
@@ -9,8 +9,8 @@
 ## 1. ACESSO
 
 - **URL:** https://www.ea.com/ea-sports-fc/ultimate-team/web-app/
-- **Acesso:** via Claude in Chrome (MCP). Navegador conectado: "SIGA-Legado" (macOS).
-- **Login:** feito **pelo Rafael** (Claude NÃO digita credenciais EA — e-mail, senha, 2FA são proibidos).
+- **Acesso:** pelo navegador Chrome do Rafael. Navegador conectado: "SIGA-Legado" (macOS).
+- **Login:** feito **pelo Rafael** (credenciais EA — e-mail, senha, 2FA — nunca digitadas por aqui).
 - **Overlay de terceiros:** há uma extensão "FC Enhancer" / "FUT Enhancer" sobreposta na página (mostra "Buy Subscription", "Sign in", preços BIN sugeridos, botões "Snipe With Vps/Trader", "FUTNEXT", "Trader", "Enhancer" no menu). NÃO é oficial da EA. Ignorar para ações oficiais.
 
 ### Como navegar (eficiência de tokens)
@@ -84,7 +84,7 @@ Inventário completo do clube (jogadores, consumíveis, staff, stadium, etc).
 - **Transfer List:** 44 jogadores, NÃO listados (Selling 0). Maioria **83 OVR**. Exceções: Pajor 88, Irene Paredes 88, Koundé 87.
   - 83 OVR repetidos: vários Zubimendi, Kovačić, Rabiot, Kamara, Modrić, Retegui, Mané, Aleix García, Milenković, Rrahmani, etc. → fodder ideal para Token Swaps 83.
 
-### Inventário de PACKS (My Packs — Claude pode abrir)
+### Inventário de PACKS (My Packs — liberados para abrir)
 | Pack | Qtd | Conteúdo |
 |---|---|---|
 | Silver Pack | 78 | 12 silver, 1 raro |
@@ -132,7 +132,7 @@ Inventário completo do clube (jogadores, consumíveis, staff, stadium, etc).
 ## 6. FUTBIN (https://www.futbin.com/) — ferramenta de apoio
 
 Site de referência externo (parceiro oficial EA) para preços, melhores jogadores e soluções de SBC.
-Acessado via Chrome MCP. Conta logada: **"LORDED"**. Seletor de jogo no topo deve estar em **FC 26** (combobox, value="26").
+Acessado pelo navegador. Conta logada: **"LORDED"**. Seletor de jogo no topo deve estar em **FC 26** (combobox, value="26").
 
 > Dica de eficiência: as URLs abaixo abrem direto a seção. Navegar pela URL (`navigate`) + `get_page_text` é muito mais barato que clicar pelos menus. Páginas de jogador/SBC podem ser client-rendered — se `get_page_text`/`web_fetch` vier vazio, usar `navigate` + `get_page_text` no Chrome (renderiza JS).
 
@@ -181,7 +181,7 @@ Acessado via Chrome MCP. Conta logada: **"LORDED"**. Seletor de jogo no topo dev
 
 1. **NUNCA comprar packs** (gasta coins/FC Points). Só ABRIR packs que ele já possui (My Packs / Unassigned).
 2. **NUNCA comprar FC Points** nem gastar dinheiro real.
-3. Claude **não digita credenciais EA** (login é do Rafael).
+3. **Credenciais EA nunca são digitadas por aqui** (login é do Rafael).
 4. Antes de qualquer ação **irreversível que consome jogadores** (submeter SBC, quick sell, descartar), **confirmar** com o Rafael.
 5. Comprar jogadores no mercado (gasta coins) → confirmar antes.
 6. Ler listas com `get_page_text` para economizar tokens.
@@ -190,14 +190,14 @@ Acessado via Chrome MCP. Conta logada: **"LORDED"**. Seletor de jogo no topo dev
 
 ## 8. SOFT BAN — cuidado crítico ao operar pelo navegador
 
-**O que é:** punição temporária da EA quando detecta muitas ações em curto período. Afeta principalmente o Mercado de Transferências (fica "locked"), mas também pode bloquear abrir packs / resolver SBCs / atualizar coins. A EA NÃO divulga os limites exatos. Automação e cliques rápidos são gatilhos clássicos → como o Claude opera via Chrome MCP, o risco é real.
+**O que é:** punição temporária da EA quando detecta muitas ações em curto período. Afeta principalmente o Mercado de Transferências (fica "locked"), mas também pode bloquear abrir packs / resolver SBCs / atualizar coins. A EA NÃO divulga os limites exatos. Automação e cliques rápidos são gatilhos clássicos → como a operação é pelo navegador, agir sempre como um humano real (cliques pausados, sem rajadas).
 
 **Sintomas:** "Transfer Market locked", erro ao listar/comprar, "credits cannot be updated", mercado não carrega, ações que não respondem. Dura de minutos a horas.
 
 **Limites visíveis na própria web app:**
 - SBC: **Hourly Limit (90/h)** e **Daily Limit (300/dia)** — respeitar; não submeter SBCs em massa.
 
-**Regras de ritmo do Claude (anti-softban):**
+**Regras de ritmo (anti-softban):**
 1. **Pausar entre ações** — usar `wait` (~2-4s) entre cliques/transações; nunca disparar rajadas.
 2. **Não encadear muitas ações** seguidas (listar/comprar/abrir pack/submeter SBC) sem intervalo.
 3. **Abrir packs com calma**, um de cada vez, com pausa — não abrir dezenas em sequência.
