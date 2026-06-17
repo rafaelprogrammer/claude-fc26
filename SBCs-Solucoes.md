@@ -49,3 +49,33 @@
 - Para desbloquear é preciso: reciclar/quick-sell o Reijnders, OU liberar espaço no SBC Storage.
 - Obs: Reijnders 86 pode ser útil no **86 OVR Token Swap** (pede 8x cartas 86 exatas) → avaliar antes de descartar.
 - **Status: aguardando decisão do Rafael. Nada foi descartado nem submetido.**
+
+---
+
+## SBC: 84+ TOTW Upgrade
+- **Tipo:** Upgrade, **Repeatable**. Recompensa: 1x pack "84+ TOTW 1-30 Player" (1 jogador TOTW das semanas 1–30, rating 84+, untradeable). Expira em ~17 dias.
+- **Requisitos do time:**
+  - Número de jogadores: **11** (time completo)
+  - **Team Rating: mín. 84**
+  - Sem exigência de química.
+
+### Objetivo do Rafael
+- Usar este SBC para **escoar o SBC Storage** (quando 100/100) e gerar TOTW para outros SBCs.
+
+### Regra de cartas (definida pelo Rafael)
+- **Somente OURO RARO** (gold rare) — nada de cartas especiais (TOTW/promo/roxas).
+- Pode usar **tradeable E untradeable**, OVR **até 86**.
+- **Estratégia de economia (equilíbrio):** começar sempre pelas cartas de **MENOR overall** (ex: 82, 83, 83…) e usar as mais altas (85/86) **só para complementar** até o time atingir **rating 84**. Minimizar o gasto de cartas altas.
+  - Caso só haja cartas altas (ex: só 86), usar — mas o ideal é equilibrar.
+  - Ir ajustando até fechar 84 com o melhor equilíbrio possível.
+- **Escada de troca (menor desperdício):** ao complementar para subir de 83→84, trocar primeiro pelas cartas de **menor overall que ainda resolvam**: usar **84** (se houver quantidade suficiente), senão completar com **85**, só então **86**. Sempre checar se há carta menor que feche o resultado antes de usar uma maior.
+- **Método:** ler via JS o inventário de gold rare por OVR (quantas 83/84/85/86 disponíveis) e calcular a combinação ótima (máximo de cartas baixas) que atinge rating de time 84, antes de fazer as trocas.
+- Proteger cartas premium / elenco titular (não usar).
+- Ferramenta de apoio: Futbin **SBC Rating Combinations** (`/26/squad-building-challenges/rating-combinations`) calcula a combinação de OVR mais barata para um rating-alvo.
+
+### Execução no Squad Builder
+- Filtros: Quality=**Gold**, Rarity=**Rare**, Max OVR=**86**, **Exclude Active Squad Players** ON, Untradeables Only **OFF** (pode usar ambos), Sort By=**Rating Low to High** (pega as menores primeiro). Build e ajustar manualmente se rating < 84.
+
+### Nota importante (extensão)
+- A extensão **FC Enhancer deve estar desativada** — com ela ativa, os cards de SBC não abrem (overlay intercepta o clique). Rafael desativou em chrome://extensions + refresh. Ver [[fut26-fc-enhancer-off]] na memória.
+- **Status: requisitos aprendidos; estratégia de montagem a confirmar com o Rafael.**

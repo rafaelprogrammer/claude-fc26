@@ -206,3 +206,26 @@ Acessado pelo navegador. Conta logada: **"LORDED"**. Seletor de jogo no topo dev
 6. Preferir poucas ações planejadas em vez de muitas pequenas e rápidas.
 
 > Pendência: o SBC "84+ TOTW Upgrade" foi ocultado por engano (botão "ocultar"); reverter na aba **Hidden** do menu SBC ao retomar — com calma.
+
+---
+
+## 9. APIs INTERNAS DO APP (camada de serviços) — para agilizar LEITURA
+
+O app expõe `window.services` e `window.repositories`. Usar a **camada de serviço do app** (não fetch cru) é a forma mais segura: já trata autenticação e parece tráfego normal do app. Acessível via `javascript_tool`.
+
+### Serviços úteis
+- `services.Club.search(criteria)` → busca itens do clube. Retorna um **observável** (`.observe(ctx, (sender, e)=>{ e.items })`). `e` tem `{items, status, success, response}`.
+- `services.Item` → `searchTransferMarket`, `requestUnassignedItems`, `requestTransferItems`, `searchStorageItems`, `list`, `bid`, `discard`, `move`…
+- `services.SBC` → `loadChallenge`, `saveChallenge`, `submitChallenge`, `replaceItemsInSquads`, `removeItemsById`.
+- `services.Squad` → gestão de squads. `services.Chemistry`, `services.Store`, `services.TransferMarket`.
+
+### Critério de busca do clube (`UTSearchCriteriaDTO`) — campos principais
+`level` ('any'|'gold'|'silver'|'bronze'), `rarities` (array de ids), `ovrMin`, `ovrMax`, `sortBy` ('ovr'…), `_sort` ('asc'|'desc'), `_position` (ex 'ST' ou 'any'), `count` (itens/página, ex 80), `offset` (paginação), `_type` ('player'), `isExactSearch`.
+
+### Padrão para ler inventário do clube (ex: gold por OVR) — testado 16/06/2026
+1. Capturar um critério real: hookar `services.Club.search` (`window.__lastCrit = t`) e clicar Search 1x na UI.
+2. Clonar preservando protótipo: `Object.assign(Object.create(Object.getPrototypeOf(crit)), crit)`, ajustar `ovrMin/ovrMax/level/_position/count/_sort`.
+3. `let obs = services.Club.search(nc); obs.observe(services.Club, (s,e)=>{ window.__cards = e.items.map(i=>({ovr:i.rating, rf:i.rareflag, u:i.untradeable})) });`
+4. Esperar ~2s e ler `window.__cards`. `i.rating`=OVR, `i.rareflag`=1 (rare) / 0 (common).
+
+> Regra de segurança (ver memória [[fut26-leitura-js]] e [[fut26-softban]]): usar a API para **LER/calcular** (rápido, poucas chamadas, espaçadas). **Ações que tocam a EA** (submitChallenge, list, bid, discard) só com pausa humana e confirmação — nunca em loop. Manipular o squad de trabalho via API é frágil → trocas de carta feitas pela UI (são locais, sem risco), conferindo rating via leitura JS.
