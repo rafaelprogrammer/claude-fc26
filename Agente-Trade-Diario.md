@@ -36,6 +36,7 @@ Para cada oportunidade: **Carta | Tipo | Preço de compra-alvo | Preço de venda
 Mais o **humor do mercado** no topo (Index 100 + momentum → comprar vs vender) e o **timing** (melhor janela do dia).
 
 ## 5. Regras de segurança (críticas)
+- **🔒 ESCOPO DE CARTAS (regra absoluta):** o agente só **vende cartas que ELE MESMO comprou** para trade — registradas no `Registro-Trades.md`. **NUNCA** vender, listar ou mexer em cartas **pré-existentes** do clube do Rafael (titulares, fodder dele, recompensas, packs). Toda venda exige que a carta tenha um registro de COMPRA pelo agente. Em dúvida, NÃO vender.
 - **Anti-softban:** day trade = sniping/flip ativo, o método que MAIS arrisca ban se feito em volume/rajada. Operar **devagar, com pausa entre ações, em poucas levas**. Ao 1º sinal de "mercado bloqueado", PARAR. (ver [[fut26-softban]])
 - **Taxa EA 5%** sempre no cálculo.
 - **Nunca comprar packs com FC Points** nem gastar dinheiro real.
