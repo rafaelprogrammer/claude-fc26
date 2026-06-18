@@ -2,6 +2,7 @@
 
 > Função: varrer o mercado e listar as **melhores cartas para day trade** (comprar e vender no dia), em **bronze, prata e ouro**, com preço de entrada/saída e margem líquida.
 > Operação: o agente **ANALISA e RECOMENDA**. A compra/venda é **pontual, no comando do Rafael, em ritmo humano** (anti-softban). Nunca executa em loop automático.
+> **Onde roda:** (a) no Cowork (Mac) — eu opero via navegador; (b) no **Claude Code / Linux** — ver `CLAUDE.md` e `SETUP-Linux-ClaudeCode.md`. O Futbin responde a **fetch simples** (sem navegador), então o agente coleta dados com `WebFetch`/`curl` no Linux.
 
 ## 1. Fontes de dados
 - **Futbin** (logado "LORDED", FC 26):
