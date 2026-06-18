@@ -25,6 +25,12 @@
 - **Prata:** pratas RARAS de ligas/nações populares (demanda de química e de SBCs "silver"), e o **Silver Pack method** (comprar pack barato, vender conteúdo). Margem % alta, valores baixos.
 - **Bronze:** **Bronze Pack method** (comprar/abrir/vender conteúdo) e bronzes raros demandados por objetivos/SBC. Volume alto, lucro por unidade pequeno → fazer em poucas levas, sem rajada.
 
+## 3.1 Volume / frequência por tipo (regra do Rafael)
+- **Bronze / prata / ouro de baixo valor (poucas coins):** fazer o **máximo de trades possível** — a margem por carta é pequena, o lucro vem do **volume**.
+- **Cartas de alto overall / alto valor (muitas coins):** fazer **2–3 trades**, conforme o mercado de transferências permitir — a margem por unidade já é grande.
+
+> ⚠️ **Ressalva crítica (anti-softban):** "máximo possível" = máximo **dentro do ritmo humano seguro** — sempre com **pausa entre ações e em levas**, NUNCA em rajada/loop. Volume alto sem pausa é o **gatilho nº 1 de softban**. Então o volume vem do **tempo** (muitas operações espaçadas ao longo do dia), não da **velocidade**. Ao 1º sinal de bloqueio, parar.
+
 ## 4. Formato de saída (o relatório do agente)
 Para cada oportunidade: **Carta | Tipo | Preço de compra-alvo | Preço de venda-alvo | Margem líquida % | Gatilho/Motivo | Risco**.
 Mais o **humor do mercado** no topo (Index 100 + momentum → comprar vs vender) e o **timing** (melhor janela do dia).
